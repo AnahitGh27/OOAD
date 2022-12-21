@@ -9,19 +9,19 @@ class Hospital
         this.patients = [];
     }
     getFullInfoAboutHospital() {
-        console.log(`Name - ${this.name} \nAddress - ${this.address} \nPhone - ${this.phone}`)
+        return `Name - ${this.name} \nAddress - ${this.address} \nPhone - ${this.phone}`;
     }
     addDepartment(department) {
         this.departments.push(department); 
     }
     getDepartmentsList() {
-        console.log(this.departments);
+        return this.departments;
     }
     addPatient(patient) {
         this.patients.push(patient);
     }
     getPatientsList() {
-        console.log(this.patients);
+        return this.patients;
     }
 }
 
