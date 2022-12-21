@@ -10,20 +10,23 @@ class Helicopter
         this.currentSpeed = 0;
         this.engineType = engineType;
         this.fuel = 0;
+        this.minFuelForFlight = 20;
+        this.fuelCostPerFlight = 10;
+        this.refuelingGallon = 50;
     }
 
     getFullInfoAboutHelicopter() {
-        console.log(`Name - ${this.name} \nManufacturer - ${this.manufacturer} \nMaximum Altitude - ${this.maxAltitude} km \nMaximum Speed - ${this.maxSpeed} km/h \nEngine type - ${this.engineType}`);
+        return `Name - ${this.name} \nManufacturer - ${this.manufacturer} \nMaximum Altitude - ${this.maxAltitude} km \nMaximum Speed - ${this.maxSpeed} km/h \nEngine type - ${this.engineType}`;
     }
     refueling() {
-        this.fuel += 50;
+        this.fuel += this.refuelingGallon;
     }
     takeOff() {
-        if(this.fuel < 20) { 
+        if (this.fuel < this.minFuelForFlight) { 
             console.log(`There is not enough fuel. You can't take off.`)
         } else {
             console.log(`${this.name} is taking off.`);
-            this.fuel -= 10;
+            this.fuel -= this.fuelCostPerFlight;
             this.currentAltitude = this.maxAltitude;
             this.currentSpeed = this.maxSpeed;
         }
@@ -34,4 +37,3 @@ class Helicopter
         this.currentSpeed = 0;
     }
 }
-
