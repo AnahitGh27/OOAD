@@ -7,16 +7,15 @@ class Dog
         this.breed = breed;
         this.age = age; 
         this.weight = weight;
+        this.minAge = 1;
     }
 
     getFullInfoAboutDog() {
-        console.log(`Dog's name is ${this.name}.\nBreed - ${this.breed}`);
-        if (this.age === 1) {
-            console.log(`Age - ${this.age} month old`);
-        } else if (this.age > 1) {
-            console.log(`Age - ${this.age} months old`);
+        if (this.age === this.minAge) {
+            return `Dog's name is ${this.name}.\nBreed - ${this.breed} \nAge - ${this.age} month old \nWeight - ${this.weight} kg`;
+        } else if (this.age > this.minAge) {
+            return `Dog's name is ${this.name}.\nBreed - ${this.breed} \nAge - ${this.age} months old \nWeight - ${this.weight} kg`;
         }
-        console.log(`Weight - ${this.weight} kg`);
     }
     eat() {
         console.log(`${this.name} is eating healthy food.`)
@@ -25,14 +24,14 @@ class Dog
         console.log(`${this.name} is drinking water.`)
     }
     run() {
-        if (this.age > 1) {
+        if (this.age > this.minAge) {
             console.log(`${this.name} is running very fast`);
         } else {
             console.log("The doggy is still small and can't run fast.");
         }
     }
     bark() {
-        if (this.age > 9) {
+        if (this.age > this.minAge) {
             console.log(`${this.name} is barking loudly.`);
         } else {
             console.log(`${this.name} is barking.`)
@@ -55,9 +54,3 @@ class Dog
         }
     }
 }
-
-
-
-
-
-
